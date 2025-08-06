@@ -87,6 +87,11 @@ public:
         for (const auto& [_, val] : bars_) {
             int height = (maxVal == 0) ? 0 : static_cast<int>(static_cast<double>(val) / maxVal * chartHeight + 0.5);
             barRects.emplace_back(barWidth, height, '#');
+            
+            //
+            //  barRects.emplace_back(barWidth, height, cat=="Ban"? '?' : '#' );  // Simple fixed rule add (add cat in for loop)
+            //
+
         }
 
         // Draw vertical axis label at the left
